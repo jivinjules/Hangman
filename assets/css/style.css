@@ -1,0 +1,31 @@
+body {
+    background-image: URL("../images/books.jpg")
+}
+.jumbotron {
+    border-bottom: 3px solid lightcoral;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    background-color: white;
+    border: 3px solid lightcoral;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.row {
+    padding-bottom: 50px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 75px;
+    clear: both;
+    color: #ffffff;
+    background: lightslategray;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    border-top: 5px solid lightcoral;
+    flex-shrink: 0;
