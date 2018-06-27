@@ -1,34 +1,117 @@
 //Variables
 //Letters to be guessed
-var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var letter = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 //words for computer to randomly display
-var beachWords = ["ocean", "sand", "coconut", "sunscreen", "palm tree", "towel", "tropical", "surfboard", "Hawaii", "seashell", "sandcastle", "sailboat"];
+var beachWords = [
+        {
+                word: "ocean",
+                image: "assets/images/ocean.jpg"
+        },
+        {
+                word: "sand",
+                image: "assets/images/sand.jpg"
 
-//Messages
-var winningMessage = "Winner, Winner, Chicken Dinner!";
-var losingMessage = "You lose! Better luck next time!"
+        },
+        {
+                word: "palmtree",
+                image: "assets/images/palm-tree.jpg"
+
+        },
+        {
+                word: "coconut",
+                image: "assets/images/coconut.jpg"
+
+        },
+        {
+                word: "towel",
+                image: "assets/images/towel.jpg"
+        },
+        {
+                word: "surfboard",
+                image: "assets/images/surfboard.jpg"
+
+        },
+        {
+                word: "hawaii",
+                image: "assets/images/hawaii.jpg"
+        },
+        {
+                word: "seashell",
+                image: "assets/images/seashell.jpg"
+
+        },
+        {
+                word: "sandcastle",
+                image: "assets/images/sandcastle.jpg"
+
+        },
+        {
+                word: "sailboat",
+                image: "assets/images/sailboat.jpg"
+
+        }
+];
+for (var i = 0; i < beachWords.length; i++) {
+        console.log(beachWords[i].word);
+      }
+      console.log("---------");
+
+var startGame = (true); //starts game
+var endGame = (false); //turn to true to end game
+var winCount= (0); //keeps track of number of wins
+var guessesLeft = (0); //# of guesses left (max 12)
+var maxGuesses = (12);
+var lettersGuessed = []; //holds the letters guessed
+var underscore = "_ ";
+var win = true; // alert win or lose message
+var winMessage = ("Winner! Winner! Chicken Dinner!");
+var loseMessage = ("You lose! Better luck next time!")
+
+
+// document.getElementById("words").innerHTML = beachWords;
+// document.getElementById("wins").innerHTML = winCount;
+// document.getElementById("guessesleft").innerHTML = guessesLeft;
+// document.getElementById("lettersguessed").innerHTML = letter[];
 
 //User presses a key to start the game
-document.onkeyup = function(startGame) {
-        var startGame = event.key;
-        console.log(startGame);
-}
+document.onkeyup = function (event) {
+       var startGame = event.key;
+       console.log(event.key);
+                           
+        }
+        
 
 //Computer randomly generates a word from wordbank
-var beachWords = beachWords[Math.floor(Math.random() * beachwords.length)];
+var randomWord = beachWords[Math.floor(Math.random() * beachWords.length)].word;
+console.log("This is my random word " + randomWord);
+document.getElementById("#words").innerHTML = beachWords.word;
+
+//Computer turns chosen word into underscores with spaces in between
+function wordToUnderscore(beachWords) 
+{
+        var underscore = "";
+      //  for (i = 0; i < beachWords[word].length; i++); 
+                
+}
 
 //user guesses a letter
+var letter = letter.toLowerCase();
 
-//if letter is correct, it shows on screen
+//if letter is correct, it shows on screen 
 
-//else letter is incorrect, counter guess goes down by one
+//else letter is incorrect, counter guess goes up by one and letter displays on screen in guessedLetters
 
-//if word is correctly guessed, message on screen "YOU WIN!"
 
-//else user runs out of guesses, message on screen winningMessage on Screen
+//message displays on screen. Win counter goes up by one if win and changes to image of correct word.
+if (win) {
+        alert(winMessage);
 
-//If word is correctly guessed, win counter goes up by one and image of word appears on screen
+}
+
+else {
+        alert(loseMessage);
+}
 
 //computer randomly chooses a new word
 
