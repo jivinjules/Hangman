@@ -11,7 +11,7 @@ console.log("---------");
 
 var startGame = false; //starts game
 var endGame = false; //turn to true to end game
-var guesses; //# of guesses  (max 12)
+var guesses = 12; //# of guesses  (max 12)
 var lettersGuessed = []; //holds the letters guessed
 var winCount = 0; //keeps track of number of wins
 var randomWord = beachWords[Math.floor(Math.random() * beachWords.length)];
@@ -24,52 +24,54 @@ document.onkeyup = function (event) {
         console.log(event.key);
         lettersGuessed.push(userGuess); //Used to determine what user has selected
         startGame = true;
-        guesses = 12;
+        guesses--;
         document.getElementById("guessesleft").innerHTML = guesses;
         document.getElementById("lettersguessed").innerHTML = lettersGuessed;
         console.log("This is my random word " + randomWord);
 
         for (var i = 0; i < randomWord.length; i++) {
                 underscore[i] = "_  ";
-               // console.log(randomWord);
-
-                document.getElementById("words").innerHTML = underscore.join("");
-
+                // console.log(randomWord);
         }
 
         //user guesses a letter
         // Rudolph.indexOf(t) == -1 This help for me
-        
+
         if (randomWord.indexOf(userGuess) == -1) {
                 //decrement guesses
-                guesses--; 
+
+                //  guesses--;
                 document.getElementById("guessesleft").innerHTML = guesses;
+
 
         } else {
                 for (let i = 0; i < randomWord.length; i++) {
-                        if (randomWord.charAt === userGuess.toLowerCase) {
-                                underscore[i] = userGuess; 
-                        }
+                        console.log(randomWord[i]);
+                        if (userGuess === randomWord[i]) {
+                                //    console.log("Troubleshooting my if statement")
 
-                } //for loop ends
-                console.log(randomWord + userGuess + guesses);
+                                underscore[i] = userGuess;
+                                console.log(underscore[i]);
+                                console.log(underscore);
+
+                                document.getElementById("words").innerHTML = underscore.join("");
+                                // console.log(randomWord.charAt() + userGuess);
+
+                        } //for loop ends
+                        //        console.log(randomWord + userGuess + guesses);
+
+                }
 
         }
 }
+//If user wins, win count goes up by one, and the win Message comes on screen
+if (randomWord === underscore) {
+        winCount++;
+        alert(winMessage);
+}
 
-
-//else letter is incorrect, counter guess goes up by one and letter displays on screen in guessedLetters
-
-
-//message displays on screen. Win counter goes up by one if win and changes to image of correct word.
-// if (win) {
-//         alert(winMessage);
-
-// }
-
-// else {
-//         alert(loseMessage);
-// }
-
-        //computer randomly chooses a new word
+//If guesses gets to zero, the lose message appears on screen
+if (guesses === 0) {
+        alert(loseMessage);
+}
 
