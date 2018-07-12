@@ -63,12 +63,45 @@ function roundComplete() {
 
         if (lettersInChosenWord.toString() === blanksAndUnderscores.toString()) {
                 winCount++;
+                if (chosenWord === "palmtree") {
+                        document.getElementById('beachpic').src = 'assets/images/palm-tree.jpg';
+                };
+               if (chosenWord === "hawaii") {
+                        document.getElementById('beachpic').src = 'assets/images/Hawaii.jpg';
+                };
+               if (chosenWord === "coconut") {
+                        document.getElementById('beachpic').src = 'assets/images/coconut.jpeg';
+                };
+                if (chosenWord === "sailboat") {
+                        document.getElementById('beachpic').src = 'assets/images/sailboat.jpg';
+                };
+                if (chosenWord === "seashell") {
+                        document.getElementById('beachpic').src = 'assets/images/seashell.jpg';
+                }
+                if (chosenWord === "surfboard") {
+                        document.getElementById('beachpic').src = 'assets/images/surfboard.jpg';
+                }
+                if (chosenWord === "sandcastle") {
+                        document.getElementById('beachpic').src = 'assets/images/sandcastle.jpg';
+                }
+                if (chosenWord === "sand") {
+                        document.getElementById('beachpic').src = 'assets/images/sand.jpg';
+                }
+                if (chosenWord === "ocean") {
+                        document.getElementById('beachpic').src = 'assets/images/beach.jpg';
+                }
+                if (chosenWord === "towel") {
+                        document.getElementById('beachpic').src = 'assets/images/towel.jpg';
+                }
+                alert(chosenWord);
                 alert("Winner! Winner! Chicken Dinner!");
                 document.getElementById("wins").innerHTML = winCount;
                 startGame();
+                
         }
         else if (numberOfGuesses === 0) {
                 lossCount++;
+                alert(chosenWord);
                 alert("You Lose! Better Luck Next Time!");
                 document.getElementById("losses").innerHTML = lossCount;
                 startGame();
