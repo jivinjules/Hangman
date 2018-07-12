@@ -4,19 +4,20 @@ body {
 .jumbotron {
     border-bottom: 3px solid lightcoral;
     text-align: center;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: "Homemade Apple", cursive;
     color: skyblue;
+    height: 220px;
 }
 
 img {
-    width: 200px;
-    height: 200px;
+    width: 130px;
+    height: 130px; 
 }
 
 #beachpic {
     position: relative;
-    float: left;
-    margin-left: 50px;
+    display: inline-block;
+    margin-left: 0 auto;
 
 }
 
@@ -35,8 +36,9 @@ p {
     font-size: 20px
 }
 .row {
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     padding-top: 20px;
+    text-align: center;
 }
 
 footer {
