@@ -56,6 +56,7 @@ function checksLetters(letter) {
         }
 }
 //All html is updated
+//image is updated with an image of the word
 function roundComplete() {
         document.getElementById("guessesleft").innerHTML = numberOfGuesses;
         document.getElementById("words").innerHTML = blanksAndUnderscores.join(" ");
